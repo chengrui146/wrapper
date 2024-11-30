@@ -35,7 +35,7 @@ static inline union std_string new_std_string(const char *s) {
 static inline struct std_vector new_std_vector(void *begin) {
     struct std_vector vector = {
         .begin = begin,
-        .end = begin + 1,
+        .end = begin + sizeof(union std_string),
     };
     vector.end_capacity = vector.end;
     return vector;
